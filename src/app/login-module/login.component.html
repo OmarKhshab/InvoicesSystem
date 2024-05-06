@@ -1,0 +1,24 @@
+<mat-card fxLayoutAlign="center center" fxFlexFill>
+    <mat-card-content fxFlex="50" fxFlex.xs="80"  >
+            <mat-toolbar color="primary">
+                {{ "login.title" | translate }}
+            </mat-toolbar>
+            <form [formGroup]="loginForm" (ngSubmit)="login()" fxLayoutAlign="stretch" fxLayout="column">
+                <mat-form-field>
+                    <mat-label>{{ "login.username.label" | translate }}</mat-label>
+                    <input matInput placeholder="username" formControlName="username" required>
+                    <mat-error *ngIf="loginForm.get('username')?.hasError('required')">{{ "login.username.requriredError" | translate }}</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>{{ "login.password.label" | translate }}</mat-label>
+                    <input placeholder="password" matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <mat-error *ngIf="loginForm.get('password')?.hasError('required') && !invalidCredentials">{{ "login.password.requriredError" | translate }}</mat-error>
+                    <mat-error *ngIf="invalidCredentials">{{ "login.error.invalidCredentials" | translate }}</mat-error>
+                </mat-form-field>
+                <button mat-raised-button type="submit" [disabled]="loginForm.invalid" color="primary">{{"login.submit.title" | translate}}</button>
+            </form>
+    </mat-card-content>
+</mat-card>
