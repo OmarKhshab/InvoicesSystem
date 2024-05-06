@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
 
   public redirectByRole() {
     if (this.currentRole == defines.adminRole) {
-        console.log('admin')
+        this.router.navigate(['/admin']);
     } else {
       this.router.navigate(['/user']);
     }

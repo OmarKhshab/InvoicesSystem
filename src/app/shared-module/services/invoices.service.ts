@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { Invoice } from '../models/interface.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InvoiceService {
-  private invoicesSubject$ = new BehaviorSubject<Invoice[]>([]);
+  public invoicesSubject$ = new BehaviorSubject<Invoice[]>([]);
   invoices$ = this.invoicesSubject$.asObservable();
 
   constructor() {
@@ -84,6 +84,10 @@ export class InvoiceService {
     return this.invoicesSubject$.getValue();
   }
 
+  public getAllInvoices(): Observable<Invoice[]> {
+    return this.invoices$;
+  }
+
   addInvoice(invoice: Invoice) {
     const invoices = this.getInvoices();
     invoices.push(invoice);
@@ -99,12 +103,16 @@ export class InvoiceService {
     }
   }
 
-  deleteInvoice(id: number) {
+  public deleteInvoice(id?: number) {
     const invoices = this.getInvoices();
     const index = invoices.findIndex(invoice => invoice.id === id);
     if (index !== -1) {
       invoices.splice(index, 1);
       this.invoicesSubject$.next(invoices);
+      return this.invoices$;
+    }
+    else {
+        return of({});
     }
   }
 }
