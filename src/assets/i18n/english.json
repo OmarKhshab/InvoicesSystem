@@ -1,0 +1,19 @@
+{
+    "login": {
+        "title": "Welcome to invoice",
+        "username": {
+            "label": "username",
+            "requriredError": "please enter the username"
+        },
+        "password": {
+            "label": "password",
+            "requriredError": "please enter the password"
+        },
+        "error": {
+            "invalidCredentials": "the username or password you entered are invalid"
+        },
+        "submit":{
+            "title": "sign In"
+        }
+    }
+}

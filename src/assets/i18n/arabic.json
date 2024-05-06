@@ -1,0 +1,19 @@
+{
+    "login": {
+        "title": "اهلاّ بكم في فواتير",
+        "username": {
+            "label": "اسم المستخدم",
+            "requriredError": "برجاء ادخل اسم المستخدم"
+        },
+        "password": {
+            "label": "كلمه المرور",
+            "requriredError": "برجاء ادخل اسم كلمه المرور"
+        },
+        "error": {
+            "invalidCredentials": "اسم المستخدم او كلمه المرور غير صحيحه"
+        },
+        "submit":{
+            "title": "تسجيل دخول"
+        }
+    }
+}
