@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './shared-module/shared.module';
 import { LoginModule } from './login-module/login.module';
+import { UserModule } from './user-module/user.module';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
 }
@@ -33,6 +34,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ReactiveFormsModule,
     SharedModule,
     LoginModule,
+    UserModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -17,6 +17,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { LoginService } from './services/login.service';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { HeaderComponent } from './header/header.component';
+import { InvoiceService } from './services/invoices.service';
 
 @NgModule({
   declarations: [HeaderComponent],
@@ -41,6 +42,7 @@ import { HeaderComponent } from './header/header.component';
   ],
   providers: [
     LoginService,
+    InvoiceService,
   ],
   exports: [
     FormsModule,
