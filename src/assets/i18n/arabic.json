@@ -1,4 +1,7 @@
 {
+    "header": {
+        "title" : "فواتير"
+    },
     "login": {
         "title": "اهلاّ بكم في فواتير",
         "username": {

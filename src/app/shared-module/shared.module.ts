@@ -16,8 +16,10 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { TranslateModule } from '@ngx-translate/core';
 import { LoginService } from './services/login.service';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
+  declarations: [HeaderComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -57,6 +59,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     MatTabsModule,
     TranslateModule,
     FlexLayoutModule,
+    HeaderComponent,
   ],
 })
 export class SharedModule {}

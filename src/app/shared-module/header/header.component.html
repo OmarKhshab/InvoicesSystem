@@ -1,0 +1,13 @@
+<mat-toolbar>
+    <button mat-icon-button aria-label="go to home page" (click)="goToHomePage()">
+        <mat-icon>home</mat-icon>
+    </button>
+    <span>{{ "header.title" | translate }}</span>
+    <span class="spacer"></span>
+    <button mat-icon-button aria-label="change language" (click)="changeLanguage()">
+      <mat-icon>language</mat-icon>
+    </button>
+    <button *ngIf="(isLoggedIn | async)"  (click)="logout()" mat-icon-button aria-label="logout">
+        <mat-icon>exit_to_app</mat-icon>
+    </button>
+  </mat-toolbar>

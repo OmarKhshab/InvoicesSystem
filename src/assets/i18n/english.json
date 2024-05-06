@@ -1,4 +1,7 @@
 {
+    "header": {
+        "title" : "Invoice"
+    },
     "login": {
         "title": "Welcome to invoice",
         "username": {
