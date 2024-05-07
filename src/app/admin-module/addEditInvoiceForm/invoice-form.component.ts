@@ -26,7 +26,6 @@ export class AddEditInvoiceComponent implements OnInit {
   }
   public ngOnInit() {
     const idParam = this.route.snapshot.queryParamMap.get('id');
-    console.log(this.route.snapshot.queryParamMap);
     this.id = idParam? idParam : '';
     this.invoiceForm = this.formBuilder.group({
       items: ['', Validators.required],
