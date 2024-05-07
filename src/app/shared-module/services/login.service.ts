@@ -39,7 +39,7 @@ export class LoginService {
     localStorage.removeItem('isLoggedIn');
     this.userRole$.next('');
     this.loginState$.next(false);
-    window.location.href = '/login';
+    this.router.navigate(['']);
   }
   public getCurrentRole() {
     if (this.isLoggedIn()) {

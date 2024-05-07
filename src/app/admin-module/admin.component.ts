@@ -2,7 +2,8 @@ import { AfterViewInit, ChangeDetectorRef, Component, ViewChild } from '@angular
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { Invoice } from '../shared-module/models/interface.model';
+import { Router } from '@angular/router';
+import { Invoice } from '../shared-module/models/invoice.interface.model';
 import { InvoiceService } from '../shared-module/services/invoices.service';
 
 @Component({
@@ -18,7 +19,7 @@ export class AdminComponent implements AfterViewInit {
   displayedColumnsWithAction: string[] = ['id', 'items', 'quantities', 'prices', 'status', 'type', 'action'];
   dataSource!: MatTableDataSource<Invoice>;
   dialogRef: any;
-  constructor(private invoiceService: InvoiceService, private cdref: ChangeDetectorRef, private dialog: MatDialog ) {
+  constructor(private invoiceService: InvoiceService, private cdref: ChangeDetectorRef, private dialog: MatDialog, private router: Router ) {
   }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -46,6 +47,10 @@ export class AdminComponent implements AfterViewInit {
     });
   }
   public EditInvoice(element: Invoice) {
-    console.log(element)
+    const queryParams = { id: element.id };
+    this.router.navigate(['/admin/invoice'], {queryParams});
+  }
+  public AddInvoice() {
+    this.router.navigate(['/admin/invoice']);
   }
 }

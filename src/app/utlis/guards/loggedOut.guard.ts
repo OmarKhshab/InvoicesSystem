@@ -14,11 +14,11 @@ export const loggedOutGuard: CanActivateFn = () => {
   }
   else {
     if (loginService.getCurrentRole() == defines.adminRole) {
-      console.log('admin')
+      router.navigate(['/admin']);
       return false;
     }
     else {
-      console.log('user')
+      router.navigate(['/admin']);
       return false;
     }
   }

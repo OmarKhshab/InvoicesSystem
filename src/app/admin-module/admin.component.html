@@ -2,7 +2,7 @@
     <mat-label>Filter</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="filter" #input>
 </mat-form-field>
-
+<button mat-button (click)="AddInvoice()"><mat-icon>library_add</mat-icon>Add Invoice</button>
 <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource">
   

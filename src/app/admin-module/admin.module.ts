@@ -4,12 +4,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared-module/shared.module';
 import { AdminComponent } from './admin.component';
 import { AdminRoutingModule } from './admin-routing.module';
+import { AddEditInvoiceComponent } from './addEditInvoiceForm/invoice-form.component';
 
 
 
 @NgModule({
   declarations: [
-    AdminComponent
+    AdminComponent,
+    AddEditInvoiceComponent,
   ],
   imports: [
     CommonModule,

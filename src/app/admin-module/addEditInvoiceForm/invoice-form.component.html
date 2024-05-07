@@ -1,0 +1,35 @@
+<mat-card fxLayoutAlign="center center" fxFlexFill>
+  <mat-card-content fxFlex="50" fxFlex.xs="80"  >
+          <mat-toolbar color="primary">
+              Invoice {{id}} 
+          </mat-toolbar>
+          <form [formGroup]="invoiceForm" (ngSubmit)="submitData()" fxLayoutAlign="stretch" fxLayout="column">
+              <mat-form-field>
+                  <mat-label>items</mat-label>
+                  <input matInput placeholder="items" formControlName="items" required>
+                  <mat-error *ngIf="invoiceForm.get('items')?.hasError('required')">please enter items</mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>prices</mat-label>
+                <input matInput placeholder="prices" formControlName="prices" required>
+                <mat-error *ngIf="invoiceForm.get('prices')?.hasError('required')">please enter price</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>quantities</mat-label>
+              <input matInput placeholder="quantities" formControlName="quantities" required>
+              <mat-error *ngIf="invoiceForm.get('quantities')?.hasError('required')">please enter quantities</mat-error>
+            </mat-form-field>
+          <mat-form-field>
+            <mat-label>status</mat-label>
+            <input matInput placeholder="status" formControlName="status" required>
+            <mat-error *ngIf="invoiceForm.get('status')?.hasError('required')">status</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>type</mat-label>
+            <input matInput placeholder="type" formControlName="type" required>
+            <mat-error *ngIf="invoiceForm.get('type')?.hasError('required')">type</mat-error>
+          </mat-form-field>
+              <button mat-raised-button type="submit" [disabled]="invoiceForm.invalid" color="primary">submit</button>
+          </form>
+  </mat-card-content>
+</mat-card>

@@ -1,7 +1,7 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { Invoice } from '../shared-module/models/interface.model';
+import { Invoice } from '../shared-module/models/invoice.interface.model';
 import { InvoiceService } from '../shared-module/services/invoices.service';
 
 @Component({
